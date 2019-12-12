@@ -1,1 +1,4 @@
-#write your code here
+def hello(who)
+    "Hello, #{who}!"
+end 
+    #write your code here

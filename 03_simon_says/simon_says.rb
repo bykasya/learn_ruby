@@ -9,7 +9,12 @@ def shout(text)
 end
 
 def repeat(text,c=2)
-   "#{text} "*c # used string to add space b/w repeated words
+    a=[]
+  while c>0 do
+    a << text
+    c-=1
+  end
+  a.join(" ")
 end
 
 
@@ -17,18 +22,39 @@ puts repeat("hello", x=2)
 puts shout ("i wanna scream")
 
 
-def start_of_word(text, n)
+def start_of_word(text,n)
+    
     a=text.split("")
-    puts a.first(n).join
+     a.first(n).join
 end
 
-start_of_word("breakfast", 1)
+puts start_of_word("breakfast", 1)
 
-def first_word(phrase, n)
-    a="#{phrase}".split
-    puts (a[n]).to_s
+
+def first_word(phrase)
+    a=phrase.split
+    a[0]
 end 
     
- first_word("this is my phrase", 1)
+ puts first_word("this is my phrase")
+ 
+ 
+ def titleize(text)
+     a=text.split
+     littlewords=["a", "are","by","the", "or", "is", "and", "but", "over", "to", "as"]
+     cap=[]
+     
+     a.each do |word|
+         if littlewords.include?(word)
+            cap << word
+         else cap << word.capitalize
+         end
+        end
+    
+    cap[0]=cap[0].capitalize
+    cap.join(" ")
+ end 
+ 
+puts titleize("the bridge over the river")
 
 #write your code here
